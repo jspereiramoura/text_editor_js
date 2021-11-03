@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#container__editor {
+    margin: 1em 2em;
+}
+
+#editor__f {
+    position: relative;
+    height: 3em;
+    background-color: darkgrey;
+    display: flex;
+    align-items: center;
+}
+
+#editor {
+    background-color: white;
+    border: 1px solid darkgrey;
+    border-top: none;
+    /* border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em; */
+    min-height: 200px;
+    /* Comentar ao programar mobile */
+    padding: 1em;
+    outline: none;
+    font-size: 12px;
+}
+
+.editor__f__buttons {
+    line-height: calc(3em - .6em);
+    cursor: pointer;
+    color: white;
+    background-color: darkgrey;
+    border: none;
+    text-align: center;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    padding: 0 1em;
+    margin: 0 .3em;
+    min-width: 3em;
+}
+
+.editor__f__buttons:hover {
+    border-radius: 5px;
+    background-color: white;
+    color: darkgrey;
+}
+
+#bold__button,
+#italic__button,
+#underline__button,
+#text-color__button {
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+#italic__button {
+    font-style: italic;
+    font-family: serif;
+}
+
+#underline__button {
+    text-decoration: underline;
+}
+
+.editor__f__fontsize {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#minus-font,
+#plus-font {
+    background-color: darkgrey;
+    border: none;
+    cursor: pointer;
+    color: white;
+    width: 2.5em;
+    height: 2.5em;
+    border: 1px solid white;
+}
+
+#minus-font:hover,
+#plus-font:hover {
+    color: darkgrey;
+    background-color: white;
+}
+
+.editor__f__fontsize:hover {
+    background-color: darkgrey;
+    color: white;
+}
+
+.editor__f__fontsize #fontsize__select {
+    cursor: pointer;
+    appearance: none;
+    min-width: 3em;
+    min-height: 2.5em;
+    border: 1px solid white;
+    outline: none;
+    text-align: center;
+}
+
+.editor__f__fontsize #fontsize__select option {
+    width: 100px;
+    padding: 1em;
+}
+
+#color-palete {
+    height: 3em;
+    width: 300px;
+    background-color: white;
+    border: 1px solid darkgrey;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    /* display: flex; */
+    gap: .2em;
+}
+
+.item__color-palete {
+    width: 20%;
+    margin: .7em;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.item__color-palete:hover {
+    opacity: .5;
+}

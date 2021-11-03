@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<bod>
+    <div id="container__editor">
+        <div id="editor__f">
+            <div class="editor__f__buttons">
+                <select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;">
+                    <option value="p" selected>Texto normal</option>
+                    <option value="h1">Título</option>
+                    <option value="h2">Subtítulo</option>
+                    <option value="h3">Título 1</option>
+                    <option value="h4">Título 2</option>
+                    <option value="h5">Título 3</option>
+                </select>
+            </div>
+            <button id="bold__button" class="editor__f__buttons" onclick="formatDoc('bold');">b</button>
+            <button id="italic__button" class="editor__f__buttons" onclick="formatDoc('italic');">i</button>
+            <button id="underline__button" class="editor__f__buttons" onclick="formatDoc('underline');">u</button>
+            <div id="text-color__button" class="editor__f__buttons">
+                <span>a</span>
+                <div id="color-palete">
+                    <button class="item__color-palete" style="background-color: red;"></button>
+                    <button class="item__color-palete" style="background-color: lightgreen;"></button>
+                    <button class="item__color-palete" style="background-color: lightskyblue;"></button>
+                    <button class="item__color-palete" style="background-color: lightslategrey;"></button>
+                    <button class="item__color-palete" style="background-color: black;"></button>
+                </div>
+            </div>
+
+
+            <div id="font-size__button" class="editor__f__buttons editor__f__fontsize">
+                <button id="minus-font" class="">&#9660</button>
+                <select onchange="fontsizeChange(this[this.selectedIndex].value);" name="" id="fontsize__select">
+                    <option value="12px" >12px</option>
+                    <option value="14px" >14px</option>
+                    <option value="16px" >16px</option>
+                    <option value="18px" >18px</option>
+                    <option value="20px" >20px</option>
+                    <option value="22px" >22px</option>
+                    <option value="24px" >24px</option>
+                    <option value="26px" >26px</option>
+                    <option value="28px" >28px</option>
+                    <option value="30px" >30px</option>
+                    <option value="32px" >32px</option>
+                </select>
+                <button id="plus-font" class="">&#9650</button>
+            </div>
+        </div>
+        <div id="editor" onfocus="this.value = this.value;" contenteditable="true" spellcheck="false">
+        </div>
+    </div>
+
+    </body>
+    <script src="main.js"></script>
+
+</html>
