@@ -21,10 +21,7 @@
     background-color: white;
     border: 1px solid darkgrey;
     border-top: none;
-    /* border-top-left-radius: 1.5em;
-    border-top-right-radius: 1.5em; */
     min-height: 200px;
-    /* Comentar ao programar mobile */
     padding: 1em;
     outline: none;
     font-size: 12px;
@@ -117,9 +114,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    display: none;
-    /* display: flex; */
     gap: .2em;
+    display: none;
 }
 
 .item__color-palete {

@@ -23,17 +23,32 @@ const item__colorPalete = document.getElementsByClassName("item__color-palete");
 
 Array.prototype.forEach.call(item__colorPalete, function(el) {
     el.addEventListener('click', () => {
-        formatDoc('forecolor', el.style.backgroundColor);
+        // formatDoc('forecolor', ); 
+
+        const selection = window.getSelection();
+        const element = selection.anchorNode.parentNode;
+
+        if (element.style.color != el.style.backgroundColor) {
+            const range = selection.getRangeAt(0);
+            let change = document.createTextNode(range);
+            let fontTag = document.createElement("span");
+            fontTag.style.color = el.style.backgroundColor;
+
+            range.deleteContents();
+            fontTag.appendChild(change);
+            range.insertNode(fontTag);
+        }
     });
 });
 
 function fontsizeChange(fontsize) {
     const selection = window.getSelection();
-    const element = selection.anchorNode.parentNode;
+    const element = selection.anchorNode.parentElement;
 
     if (element.style.fontSize != fontsize) {
-        const range = selection.getRangeAt(0);
-        let change = document.createTextNode(range);
+        const range = selection.getRangeAt(0); //retorna o range da palavra selecionada
+        let change = document.createTextNode(range); //
+        change.innerHTML = element.innerHTML;
         let fontTag = document.createElement("font");
         fontTag.style.fontSize = fontsize;
 
